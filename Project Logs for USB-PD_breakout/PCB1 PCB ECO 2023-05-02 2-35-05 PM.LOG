@@ -1,0 +1,20 @@
+Added Component: Designator=SW1(SW4_PTS815 SJM 250 SMTR LFS_CNK)
+Add component (AddParameter): Name = "Current"; Value = "0.05A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounted"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CKN12215-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Volt"; Value = "12V"; VariantName = "[No Variations]"
+Added Component: Designator=SW2(SW4_PTS815 SJM 250 SMTR LFS_CNK)
+Add component (AddParameter): Name = "Current"; Value = "0.05A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounted"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CKN12215-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Volt"; Value = "12V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=EN Pin=SW1-1
+Added Pin To Net: NetName=GND Pin=SW1-3
+Added Pin To Net: NetName=IO9 Pin=SW2-1
+Added Pin To Net: NetName=GND Pin=SW2-3
+Added Member To Class: ClassName=sheet1 Member=Component SW1 PTS815 SJM 250 SMTR LFS
+Added Member To Class: ClassName=sheet1 Member=Component SW2 PTS815 SJM 250 SMTR LFS

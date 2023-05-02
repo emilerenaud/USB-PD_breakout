@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=GND Pin=P1-A1B12
+Added Pin To Net: NetName=VBUS Pin=P1-A4B9
+Added Pin To Net: NetName=GND Pin=P1-B1A12
+Added Pin To Net: NetName=VBUS Pin=P1-B4A9
