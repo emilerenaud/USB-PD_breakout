@@ -1,0 +1,8 @@
+Added Component: Designator=J6(HOLE-3.40MM-M3-7MMEYELET-MountingFeature)
+Add component (AddParameter): Name = "Mounted"; Value = "N/A"; VariantName = "[No Variations]"
+Added Component: Designator=J7(HOLE-3.40MM-M3-7MMEYELET-MountingFeature)
+Add component (AddParameter): Name = "Mounted"; Value = "N/A"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J6-1
+Added Pin To Net: NetName=GND Pin=J7-1
+Added Member To Class: ClassName=sheet1 Member=Component J6 hole
+Added Member To Class: ClassName=sheet1 Member=Component J7 hole
