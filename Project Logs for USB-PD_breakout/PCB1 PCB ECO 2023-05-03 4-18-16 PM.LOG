@@ -1,0 +1,17 @@
+Added Component: Designator=D1(SOT-23-6)
+Add component (AddParameter): Name = "Mounted"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "SOT23-6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "NUP4301MR6T1GOSTR-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Volt"; Value = "70"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=USB_P Pin=D1-1
+Added Pin To Net: NetName=GND Pin=D1-2
+Added Pin To Net: NetName=VBUS Pin=D1-5
+Added Pin To Net: NetName=USB_N Pin=D1-6
+Change Net Name : Old Net Name=NetP1_A5 New Net Name=CC1
+Added Pin To Net: NetName=CC2 Pin=D1-3
+Added Pin To Net: NetName=CC2 Pin=D1-4
+Added Pin To Net: NetName=CC2 Pin=P1-B5
+Added Pin To Net: NetName=CC2 Pin=U2-6
+Added Net: Name=CC2
+Added Member To Class: ClassName=sheet1 Member=Component D1 NUP4301MR6T1G
