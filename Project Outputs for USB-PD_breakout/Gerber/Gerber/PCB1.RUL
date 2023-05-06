@@ -1,0 +1,8 @@
+DRC Rules Export File for PCB: C:\Git\USB-PD_breakout\PCB1.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_USB_C|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=Clearance_Power|Scope=Board|Minimum=11.81
+RuleKind=Width|RuleName=Width_Power(5A)|Scope=Board|Minimum=19.69
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width_signal|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Clearance_signal|Scope=Board|Minimum=4.92
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
