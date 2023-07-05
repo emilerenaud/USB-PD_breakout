@@ -41,7 +41,7 @@ void setup() {
 
   digitalWrite(LED1, HIGH);
   digitalWrite(LED2, HIGH);
-
+  
   Serial.begin(115200);
   Serial.println("USB-PD start here");
 
