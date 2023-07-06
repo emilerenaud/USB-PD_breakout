@@ -24,7 +24,7 @@
 enum voltage {V5, V9, V12, V15, V20};
 
 // Functions prototypes
-void LED1_task(void *pvParameters);
+void monitorVoltage(void *pvParameters);
 void configVoltage(voltage v);
 float readVoltage(void);
 bool checkVoltage(voltage v);
@@ -41,8 +41,7 @@ void setup() {
 
   digitalWrite(LED1, HIGH);
   digitalWrite(LED2, HIGH);
-  
-  Serial.begin(115200);
+  Serial.begin(115200); // speed doesn't matter much is USB is used.
   Serial.println("USB-PD start here");
 
   // Config the voltage to 12V
@@ -57,22 +56,22 @@ void setup() {
   }
   
   // Create task to flash LED1
-  // xTaskCreate(LED1_task,"LED1_task",10000,NULL,1,NULL);
+  xTaskCreate(monitorVoltage,"LED1_task",10000,NULL,1,NULL);
   
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(digitalRead(PG) == HIGH)
-  {
-    Serial.print("* Power bad * ");
-    digitalWrite(LED2, LOW);
-  }
-  else
-  {
-    // Serial.print("* Power good * ");
-    digitalWrite(LED2, HIGH);
-  }
+  // if(digitalRead(PG) == HIGH)
+  // {
+  //   Serial.print("* Power bad * ");
+  //   digitalWrite(LED2, LOW);
+  // }
+  // else
+  // {
+  //   // Serial.print("* Power good * ");
+  //   digitalWrite(LED2, HIGH);
+  // }
 
   float voltage = readVoltage();
   Serial.print(" Voltage: ");
@@ -80,17 +79,31 @@ void loop() {
   delay(1000);
 }
 
-void LED1_task(void *pvParameters)  // This is a task.
+void monitorVoltage(void *pvParameters)  // This is a task.
 {
   (void) pvParameters;
+  long last = millis();
+  bool flash = false;
 
   while (1) {
-    digitalWrite(LED1, LOW);
-    // digitalWrite(LED2, HIGH);
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
-    digitalWrite(LED1, HIGH);
-    // digitalWrite(LED2, LOW);
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
+    if(millis() - last > 1000)
+    {
+      last = millis();
+      if(flash)
+      {
+        digitalWrite(LED2, !digitalRead(LED2));
+      }
+    }
+
+    if(digitalRead(PG) == HIGH) // bad voltage
+    {
+      flash = 1;
+    }
+    else
+    {
+      flash = 0;
+    }
+
   }
 }
 
@@ -104,7 +117,7 @@ float readVoltage() {
   }
   voltage = voltage / 10.0;
   // Transform the voltage to the real voltage
-  voltage = voltage / (1.67 / (1.69 + 10.0));
+  voltage = voltage / (1.67 / (1.69 + 10.0)); // tweak a little bit the voltage divider to get the ish correct voltage.
   // Serial.println(analogReadMilliVolts(VoltagePin) / (1.69 / (1.69 + 10)));
   return voltage;
 }
